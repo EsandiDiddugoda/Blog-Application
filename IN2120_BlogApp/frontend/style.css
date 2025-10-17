@@ -1,0 +1,229 @@
+/* style.css for BlogApp - Cute Pastel Theme */
+
+/* Import cute fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+    font-family: 'Fredoka One', cursive;
+    background: linear-gradient(135deg, #ffe4ec 0%, #e0e7ff 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+header {
+    background: #f8e1ff;
+    box-shadow: 0 2px 8px rgba(200, 180, 255, 0.1);
+    padding: 20px 0 10px 0;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive;
+    color: #d291bc;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+nav {
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #a3c9f7;
+    background: #fff6e0;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    margin: 0 8px;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 1px 4px rgba(200, 180, 255, 0.08);
+}
+
+nav a:hover {
+    background: #ffe4ec;
+    color: #d291bc;
+}
+
+main {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container {
+    background: #fff6e0;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(200, 180, 255, 0.12);
+    padding: 28px 32px;
+    margin: 18px 0;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-container label {
+    color: #b5ead7;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.form-container input,
+.form-container textarea {
+    border: 1px solid #e0e7ff;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 1rem;
+    background: #f8e1ff;
+    color: #6a7ba2;
+}
+
+.form-container button {
+    font-family: 'Fredoka One', cursive;
+    background: linear-gradient(90deg, #ffe4ec 0%, #b5ead7 100%);
+    color: #d291bc;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 1px 6px rgba(200, 180, 255, 0.10);
+    transition: background 0.2s, color 0.2s;
+}
+
+.form-container button:hover {
+    background: linear-gradient(90deg, #a3c9f7 0%, #ffe4ec 100%);
+    color: #fff6e0;
+}
+
+.blog-card {
+    background: #e0e7ff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(200, 180, 255, 0.12);
+    padding: 24px 28px;
+    margin: 18px 0;
+    width: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: box-shadow 0.2s;
+}
+
+.blog-card:hover {
+    box-shadow: 0 4px 24px rgba(200, 180, 255, 0.18);
+}
+
+.blog-card h2 {
+    font-family: 'Fredoka One', cursive;
+    color: #d291bc;
+    font-size: 1.6rem;
+    margin: 0 0 6px 0;
+}
+
+.blog-meta {
+    color: #b5ead7;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.blog-excerpt {
+    color: #6a7ba2;
+    font-size: 1.05rem;
+}
+
+.blog-card a {
+    background: #fff6e0;
+    color: #a3c9f7;
+    border-radius: 14px;
+    padding: 6px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    align-self: flex-end;
+    box-shadow: 0 1px 4px rgba(200, 180, 255, 0.08);
+    transition: background 0.2s, color 0.2s;
+}
+
+.blog-card a:hover {
+    background: #ffe4ec;
+    color: #d291bc;
+}
+
+#blog-content {
+    background: #fff6e0;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(200, 180, 255, 0.12);
+    padding: 32px 36px;
+    width: 500px;
+    margin: 24px auto;
+}
+
+#blog-content h2 {
+    font-family: 'Fredoka One', cursive;
+    color: #d291bc;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#blog-content .blog-meta {
+    color: #b5ead7;
+    font-size: 1rem;
+    margin-bottom: 14px;
+}
+
+#blog-content .blog-body {
+    color: #6a7ba2;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+}
+
+.blog-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.blog-actions button {
+    font-family: 'Fredoka One', cursive;
+    background: linear-gradient(90deg, #ffe4ec 0%, #a3c9f7 100%);
+    color: #d291bc;
+    border: none;
+    border-radius: 16px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 1px 6px rgba(200, 180, 255, 0.10);
+    transition: background 0.2s, color 0.2s;
+}
+
+.blog-actions button:hover {
+    background: linear-gradient(90deg, #b5ead7 0%, #ffe4ec 100%);
+    color: #fff6e0;
+}
+
+/* Cute images and icons */
+header::after {
+    content: url('https://cdn.pixabay.com/photo/2017/01/31/13/14/cat-2022346_1280.png');
+    display: block;
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    opacity: 0.7;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .blog-card, #blog-content, .form-container {
+        width: 95vw;
+        padding: 12px;
+    }
+    main {
+        padding: 10px 0;
+    }
+}
