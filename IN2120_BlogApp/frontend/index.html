@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlogApp - Home</title>
+    <title>WhiskerNotes - Home</title>
     <link rel="stylesheet" href="style.css">
     <!-- Home page: Displays list of all blogs -->
 </head>
-<body>
+<body class="home-page">
     <header>
-        <h1>BlogApp</h1>
+        <h1>WhiskerNotes🐾</h1>
+
+        <!-- Add these two paw prints for cute animation -->
+        <div class="paw"></div>
+        <div class="paw"></div>
+
         <nav>
             <a href="index.html">Home</a>
             <a href="editor.html">New Blog</a>
@@ -17,6 +22,7 @@
             <a href="register.html">Register</a>
         </nav>
     </header>
+
     <main>
         <!-- Blog list will be dynamically loaded here -->
         <section id="blog-list">
@@ -30,6 +36,7 @@
             <!-- More blog cards will be dynamically loaded here -->
         </section>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>

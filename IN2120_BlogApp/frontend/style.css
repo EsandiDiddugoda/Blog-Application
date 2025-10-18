@@ -1,28 +1,66 @@
 /* style.css for BlogApp - Cute Pastel Theme */
 
-/* Import cute fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+/* Import cute font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
 
+/* Global styling */
+/* Default gradient for all pages */
 body {
-    font-family: 'Fredoka One', cursive;
-    background: linear-gradient(135deg, #ffe4ec 0%, #e0e7ff 100%);
+    font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    background-attachment: fixed, fixed;
+}
+
+/* Home page */
+body.home-page {
+    background: url('https://file.aiquickdraw.com/imgcompressed/img/compressed_43b115d2aa2ccd48a5fc631059a66bd6.webp') -2px 250px no-repeat,
+                linear-gradient(135deg, #F3F5A9 0%, #d0e4ee 50%, #e0e7ff 100%);
+    background-size: 500px auto, cover;
+}
+
+/* Blog page */
+body.blog-page {
+    background: url('https://file.aiquickdraw.com/imgcompressed/img/compressed_df9c7c7e31df8238cb9e3aedcadb1efb.webp') calc(100% + 50px) 200px no-repeat,
+                linear-gradient(135deg, #F3F5A9 0%, #d0e4ee 50%, #e0e7ff 100%);
+    background-size: 600px auto, cover;
+}
+
+/* Editor page */
+body.editor-page {
+    background: url('https://file.aiquickdraw.com/imgcompressed/img/compressed_36e0b1924806abf5a4e1f164d1181779.webp') -20px 200px no-repeat,
+                linear-gradient(135deg, #F3F5A9 0%, #d0e4ee 50%, #e0e7ff 100%);
+    background-size: 600px auto, cover;
+}
+
+/* Login page */
+body.login-page {
+    background: url('https://file.aiquickdraw.com/imgcompressed/img/compressed_ff60fd413879d66e2e3dc4ae0426ece4.webp') right 200px no-repeat,
+                linear-gradient(135deg, #F3F5A9 0%, #d0e4ee 50%, #e0e7ff 100%);
+    background-size: 600px auto, cover;
+}
+/*'https://file.aiquickdraw.com/imgcompressed/img/compressed_87d4ade1dd7ccc7343c24d3eefbb37b7.webp'
+/* Register page */
+body.register-page {
+    background: url('https://file.aiquickdraw.com/imgcompressed/img/compressed_87d4ade1dd7ccc7343c24d3eefbb37b7.webp') left 200px no-repeat,
+                linear-gradient(135deg, #F3F5A9 0%, #d0e4ee 50%, #e0e7ff 100%);
+    background-size: 600px auto, cover;
 }
 
 header {
-    background: #f8e1ff;
+    background: linear-gradient(135deg, #F3F5A9 0%, #d0e4ee 80%);
     box-shadow: 0 2px 8px rgba(200, 180, 255, 0.1);
-    padding: 20px 0 10px 0;
+    padding: 25px 0 25px 0; /* less top and bottom padding */
     text-align: center;
 }
 
 h1 {
-    font-family: 'Fredoka One', cursive;
-    color: #d291bc;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    color: #ce88b1;
+    font-size: 4rem;
+    margin-top: 0px;
+    margin-bottom: 30px;
     letter-spacing: 2px;
 }
 
@@ -31,19 +69,19 @@ nav {
 }
 
 nav a {
-    color: #a3c9f7;
+    color: #83b4f1;
     background: #fff6e0;
     text-decoration: none;
     padding: 8px 18px;
     border-radius: 20px;
     margin: 0 8px;
-    font-weight: bold;
+    font-weight: 600;
     transition: background 0.2s, color 0.2s;
     box-shadow: 0 1px 4px rgba(200, 180, 255, 0.08);
 }
 
 nav a:hover {
-    background: #ffe4ec;
+    background: #f6e3e9;
     color: #d291bc;
 }
 
@@ -55,7 +93,7 @@ main {
 }
 
 .form-container {
-    background: #fff6e0;
+    background: #fff6df;
     border-radius: 18px;
     box-shadow: 0 2px 12px rgba(200, 180, 255, 0.12);
     padding: 28px 32px;
@@ -67,14 +105,14 @@ main {
 }
 
 .form-container label {
-    color: #b5ead7;
+    color: #9d80ff;
     font-weight: 600;
     font-size: 1.1rem;
 }
 
 .form-container input,
 .form-container textarea {
-    border: 1px solid #e0e7ff;
+    border: 1px solid #b492fe;
     border-radius: 10px;
     padding: 8px;
     font-size: 1rem;
@@ -83,14 +121,14 @@ main {
 }
 
 .form-container button {
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Quicksand', sans-serif;
     background: linear-gradient(90deg, #ffe4ec 0%, #b5ead7 100%);
     color: #d291bc;
     border: none;
     border-radius: 20px;
     padding: 10px 0;
     font-size: 1.1rem;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
     margin-top: 10px;
     box-shadow: 0 1px 6px rgba(200, 180, 255, 0.10);
@@ -103,7 +141,7 @@ main {
 }
 
 .blog-card {
-    background: #e0e7ff;
+    background: #c7d2f7;
     border-radius: 18px;
     box-shadow: 0 2px 12px rgba(200, 180, 255, 0.12);
     padding: 24px 28px;
@@ -121,14 +159,14 @@ main {
 }
 
 .blog-card h2 {
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Quicksand', sans-serif;
     color: #d291bc;
     font-size: 1.6rem;
     margin: 0 0 6px 0;
 }
 
 .blog-meta {
-    color: #b5ead7;
+    color: #707cf9;
     font-size: 0.95rem;
     margin-bottom: 8px;
 }
@@ -140,11 +178,11 @@ main {
 
 .blog-card a {
     background: #fff6e0;
-    color: #a3c9f7;
+    color: #83b4f1;
     border-radius: 14px;
     padding: 6px 16px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     align-self: flex-end;
     box-shadow: 0 1px 4px rgba(200, 180, 255, 0.08);
     transition: background 0.2s, color 0.2s;
@@ -165,14 +203,14 @@ main {
 }
 
 #blog-content h2 {
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Quicksand', sans-serif;
     color: #d291bc;
     font-size: 2rem;
     margin-bottom: 10px;
 }
 
 #blog-content .blog-meta {
-    color: #b5ead7;
+    color: #9982ff;
     font-size: 1rem;
     margin-bottom: 14px;
 }
@@ -189,14 +227,14 @@ main {
 }
 
 .blog-actions button {
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Quicksand', sans-serif;
     background: linear-gradient(90deg, #ffe4ec 0%, #a3c9f7 100%);
     color: #d291bc;
     border: none;
     border-radius: 16px;
     padding: 8px 18px;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
     box-shadow: 0 1px 6px rgba(200, 180, 255, 0.10);
     transition: background 0.2s, color 0.2s;
@@ -205,16 +243,6 @@ main {
 .blog-actions button:hover {
     background: linear-gradient(90deg, #b5ead7 0%, #ffe4ec 100%);
     color: #fff6e0;
-}
-
-/* Cute images and icons */
-header::after {
-    content: url('https://cdn.pixabay.com/photo/2017/01/31/13/14/cat-2022346_1280.png');
-    display: block;
-    margin: 0 auto;
-    width: 60px;
-    height: 60px;
-    opacity: 0.7;
 }
 
 /* Responsive design */
