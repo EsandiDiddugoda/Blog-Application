@@ -133,16 +133,20 @@ if (window.location.pathname.endsWith('index.html')) {
 
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete';
-        deleteBtn.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent bubbling
+        deleteBtn.onclick = function(event) {
+            event.preventDefault();
+            event.stopPropagation();
             // Show confirmation popup before deleting
-            const confirmed = confirm('Are you sure you want to delete this blog?');
-            if (!confirmed) return;
-            deleteBlogApi(blog.id).then(res => {
-                if (res.success) window.location.href = 'index.html';
-                else alert(res.message);
-            });
-        });
+            if (confirm('Are you sure you want to delete this blog?')) {
+                deleteBlogApi(blog.id).then(res => {
+                    if (res.success) {
+                        window.location.href = 'index.html';
+                    } else {
+                        alert(res.message);
+                    }
+                });
+            }
+        };
 
         actionsDiv.appendChild(editBtn);
         actionsDiv.appendChild(deleteBtn);
@@ -169,19 +173,20 @@ editBtn.addEventListener('click', () => {
 // Delete button with confirmation
 const deleteBtn = document.createElement('button');
 deleteBtn.textContent = 'Delete';
-deleteBtn.addEventListener('click', (event) => {
-    event.stopPropagation(); // Prevent bubbling
+deleteBtn.onclick = function(event) {
+    event.preventDefault();
+    event.stopPropagation();
     // Show confirmation popup before deleting
-    const confirmed = confirm('Are you sure you want to delete this blog?');
-    if (!confirmed) return;
-    deleteBlogApi(blog.id).then(res => {
-        if (res.success) {
-            window.location.href = 'index.html';
-        } else {
-            alert(res.message);
-        }
-    });
-});
+    if (confirm('Are you sure you want to delete this blog?')) {
+        deleteBlogApi(blog.id).then(res => {
+            if (res.success) {
+                window.location.href = 'index.html';
+            } else {
+                alert(res.message);
+            }
+        });
+    }
+};
 
 actionsDiv.appendChild(editBtn);
 actionsDiv.appendChild(deleteBtn);
