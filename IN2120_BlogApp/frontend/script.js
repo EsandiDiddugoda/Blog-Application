@@ -33,6 +33,10 @@ function fetchBlogs() {
 }
 
 function createOrUpdateBlog(data) {
+    const user = getUser();
+    if (!user) {
+        return Promise.resolve({ success: false, message: 'You must be logged in' });
+    }
     return apiRequest('../backend/blog_editor.php', data);
 }
 
@@ -78,7 +82,7 @@ if (window.location.pathname.endsWith('register.html')) {
                 .then(res => {
                     if (res.success) {
                         setUser({ username, email });
-                        window.location.href = 'index.html';
+                        window.location.href = 'editor.html';
                     } else {
                         showError(res.message);
                     }
@@ -104,6 +108,28 @@ function showError(msg) {
         }
     }
     errorDiv.textContent = msg;
+}
+
+function showErrorWithLogin(msg) {
+    let errorDiv = document.getElementById('error-message');
+    if (!errorDiv) {
+        errorDiv = document.createElement('div');
+        errorDiv.id = 'error-message';
+        errorDiv.style.color = '#d291bc';
+        errorDiv.style.background = '#ffe4ec';
+        errorDiv.style.borderRadius = '10px';
+        errorDiv.style.padding = '10px';
+        errorDiv.style.margin = '10px 0';
+        errorDiv.style.textAlign = 'center';
+        const form = document.querySelector('form');
+        if (form && form.parentNode) {
+            form.parentNode.insertBefore(errorDiv, form);
+        }
+    }
+    errorDiv.innerHTML = `
+        <p>${msg}</p>
+        <button onclick="window.location.href='login.html'" style="margin-top: 10px; padding: 8px 16px; background-color: #d291bc; color: white; border: none; border-radius: 5px; cursor: pointer;">Login</button>
+    `;
 }
 
 // --- HOME PAGE ---
@@ -231,32 +257,38 @@ if (window.location.pathname.endsWith('editor.html')) {
         const params = new URLSearchParams(window.location.search);
         const id = params.get('id');
 
-        if (id) {
-            fetchBlogs().then(res => {
-                const blogs = res.blogs || [];
-                const blog = blogs.find(b => b.id == id);
-                if (blog) {
-                    document.getElementById('title').value = blog.title;
-                    document.getElementById('content').value = blog.content;
-                }
+        const user = getUser();
+        if (!user) {
+            showErrorWithLogin('You must be logged in');
+            form.style.display = 'none';
+        } else {
+            if (id) {
+                fetchBlogs().then(res => {
+                    const blogs = res.blogs || [];
+                    const blog = blogs.find(b => b.id == id);
+                    if (blog) {
+                        document.getElementById('title').value = blog.title;
+                        document.getElementById('content').value = blog.content;
+                    }
+                });
+            }
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const title = document.getElementById('title').value;
+                const content = document.getElementById('content').value;
+                const data = { title, content };
+                if (id) data.id = id;
+
+                createOrUpdateBlog(data).then(res => {
+                    if (res.success) {
+                        window.location.href = 'index.html';
+                    } else {
+                        showErrorWithLogin(res.message);
+                    }
+                });
             });
         }
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const title = document.getElementById('title').value;
-            const content = document.getElementById('content').value;
-            const data = { title, content };
-            if (id) data.id = id;
-
-            createOrUpdateBlog(data).then(res => {
-                if (res.success) {
-                    window.location.href = 'index.html';
-                } else {
-                    showError(res.message);
-                }
-            });
-        });
     }
 }
 

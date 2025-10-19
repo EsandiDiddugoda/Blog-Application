@@ -193,6 +193,32 @@ main {
     color: #963074;
 }
 
+.blog-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.blog-actions button {
+    background: #bfeaff;
+    color: #1153a3;
+    border: none;
+    border-radius: 14px;
+    padding: 6px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(200, 180, 255, 0.08);
+    transition: background 0.2s, color 0.2s;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+}
+
+.blog-actions button:hover {
+    background: #ffc5ec;
+    color: #963074;
+}
+
 #blog-content {
     background: #fff6e0;
     border-radius: 18px;
